@@ -1,6 +1,6 @@
 # ctest-telescope
 
-`ctest-telescope` is a simple plugin that integrates with [CTest](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) to allows you to fuzzy find your unit tests with [`telescope`](https://github.com/nvim-telescope/telescope.nvim) and debug them via [`nvim-dap`](https://github.com/mfussenegger/nvim-dap).
+`ctest-telescope` is a simple plugin that integrates with [CTest](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html) to allows you to fuzzy find your tests with [`telescope`](https://github.com/nvim-telescope/telescope.nvim) and debug them via [`nvim-dap`](https://github.com/mfussenegger/nvim-dap).
 
 ## Motivation
 
@@ -46,7 +46,7 @@ You also must have `ctest` installed on your local machine. If `ctest` isn't ava
 You can set the `dap_config` field to specify parameters you want pass to `dap`.
 If you specify `program`, `cwd`, or `args`, they will be overridden (since the goal of this plugin is to select those automatically).
 
-You can learn more about what fields are available for cppdbg [here](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools)).
+You can learn more about what fields are available for cppdbg [here](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools)#configuration).
 
 It should be possible to override `cppdbg` with [`codelldb`](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)) or any other debug adapter that works with C++, but this hasn't been testing yet:
 
