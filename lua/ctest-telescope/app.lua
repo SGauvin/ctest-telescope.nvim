@@ -99,7 +99,7 @@ local run_dap_test_from_test_name = function(test_name, json, settings)
             if command ~= nil then
                 if test_name == test.name then
                     local properties = test.properties
-                    local working_dir = vim.fn.getcwd() -- Set default working_dir to cwd
+                    local working_dir = settings:get().dap_config.cwd or vim.fn.getcwd() -- Set default working_dir to cwd
                     local program_path = table.remove(command, 1)
 
                     if properties ~= nil then
