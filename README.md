@@ -60,7 +60,6 @@ dap_config = {
 
 Note: If you are using `lazy.nvim`, you should pass these options to `opts` ([example](https://github.com/SGauvin/ctest-telescope.nvim?tab=readme-ov-file#lazy)) instead of explicitly passing them to `setup`.
 ```lua
--- Note: If you are using lazy.nvim, you should pass these options to 
 require("ctest-telescope").setup({
   dap_config = {
     stopAtEntry = true,
