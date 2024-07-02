@@ -107,3 +107,5 @@ If this plugin still isn't working, feel free to make an issue or a pull request
 ## Alternatives
 
 If you use only gtest, don't mind having to manually specify an executable, and don't mind a bit more configuration, you might want to try [neotest-gtest](https://github.com/alfaix/neotest-gtest), as it integrates with [neotest](https://github.com/nvim-neotest/neotest).
+
+If you're looking for a plugin that fully integrates CMake in Neovim, you might want to check out [cmake-tools.nvim](https://github.com/Civitasv/cmake-tools.nvim).
