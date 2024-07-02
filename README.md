@@ -48,7 +48,7 @@ If you specify `program`, `cwd`, or `args`, they will be overridden (since the g
 
 You can learn more about what fields are available for cppdbg [here](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools)#configuration).
 
-It should be possible to override `cppdbg` with [`codelldb`](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)) or any other debug adapter that works with C++, but this hasn't been testing yet:
+It should be possible to override `cppdbg` with [`codelldb`](https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(via--codelldb)) or any other debug adapter that works with C++, but this hasn't been tested yet:
 
 ```lua
 dap_config = {
