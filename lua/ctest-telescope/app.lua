@@ -9,13 +9,13 @@ App.__index = App
 ---@param callback function
 ---@return table|nil
 local get_ctest_json = function(settings)
-    --FIX: Run this command asynchronously in case the ctest command is slow
+    -- FIX: Run this command asynchronously in case the ctest command is slow
     -- vim.fn.json_decode is a vimscript function that can't get called in a lua callback
     -- A lua json library should be used
-    local obj = vim.system(
-        { settings:get().ctest_path, "--test-dir", settings:get().build_folder, "--show-only=json-v1" },
-        { text = true }
-    ):wait()
+
+    local ctest_args = { settings:get().ctest_path, "--test-dir", settings:get().build_folder, "--show-only=json-v1" }
+    vim.list_extend(ctest_args, settings:get().extra_ctest_args)
+    local obj = vim.system(ctest_args, { text = true }):wait()
 
     if obj.code ~= 0 or obj.stdout == "" then
         error(

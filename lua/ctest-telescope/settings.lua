@@ -10,6 +10,7 @@ Settings.__index = Settings
 ---@field ctest_path string
 ---@field build_folder string
 ---@field dap_config table
+---@field extra_ctest_args table
 
 ---@type ctest.setting_values
 local DEFAULT_SETTINGS = {
@@ -27,6 +28,10 @@ local DEFAULT_SETTINGS = {
         type = "cppdbg",
         request = "launch",
     },
+
+    ---Extra arguments passed to ctest
+    ---@type table
+    extra_ctest_args = {},
 }
 
 ---@return ctest.settings

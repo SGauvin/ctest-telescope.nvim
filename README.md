@@ -32,6 +32,10 @@ You also must have `ctest` installed on your local machine. If `ctest` isn't ava
   -- Path to the ctest executable
   ctest_path = "ctest",
 
+  -- Extra arguments to pass to ctest
+  -- For example, to add '-C Debug', you should set this variable to {"-C", "Debug"}
+  extra_ctest_args = {},
+
   -- Folder where your compiled executables will be found
   build_folder = "build",
 
@@ -49,6 +53,8 @@ If you specify, `program`, `cwd`, or `args`, they will be overridden (since the 
 ### Example configuration to enable pretty-printing and stopAtEntry
 
 ```lua
+-- Note: if you are using Lazy.nvim, pass these
+-- arguments to `opts` instead of manually calling `setup`
 require("ctest-telescope").setup({
   dap_config = {
     stopAtEntry = true,
@@ -71,11 +77,9 @@ Here is an example on how you could integrate this in your own config:
 ```lua
 vim.keymap.set("n", "<F5>", function()
   local dap = require("dap")
-  if dap.session() == nil then
+  if dap.session() == nil and (vim.bo.filetype == "cpp" or vim.bo.filetype == "c")
     -- Only call this on C++ and C files
-    if vim.bo.filetype == "c" or vim.bo.filetype == "cpp" then
-      require("ctest-telescope").pick_test_and_debug()
-    end
+    require("ctest-telescope").pick_test_and_debug()
   else
     dap.continue()
   end
