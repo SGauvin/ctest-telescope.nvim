@@ -111,10 +111,16 @@ local run_dap_test_from_test_name = function(test_name, json, settings)
                         end
                     end
 
+                    local processed_commands = {}
+                    for _, arg in ipairs(command) do
+                        local processed_arg = string.gsub(arg, "%*", "\\*")
+                        table.insert(processed_commands, processed_arg)
+                    end
+                    
                     local config = {
                         program = program_path,
                         cwd = working_dir,
-                        args = command,
+                        args = processed_commands,
                     }
 
                     config = vim.tbl_deep_extend("keep", config, settings:get().dap_config)
