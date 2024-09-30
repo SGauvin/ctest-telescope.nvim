@@ -114,7 +114,7 @@ local run_dap_test_from_test_name = function(test_name, json, settings)
                     local config = {
                         program = program_path,
                         cwd = working_dir,
-                        args = string.gsub(command, "*", "\*"),
+                        args = string.gsub(command, "*", "\\*"),
                     }
 
                     config = vim.tbl_deep_extend("keep", config, settings:get().dap_config)
