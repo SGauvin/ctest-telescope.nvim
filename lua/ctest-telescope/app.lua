@@ -113,8 +113,7 @@ local run_dap_test_from_test_name = function(test_name, json, settings)
 
                     local processed_commands = {}
                     for _,arg in ipairs(command) do
-                        table.insert(processed_commands, string.gsub(arg, "*", "\\*")
-                        processed_commands
+                        table.insert(processed_commands, string.gsub(arg, "*", "\\*"))
                     end
                     
                     local config = {
