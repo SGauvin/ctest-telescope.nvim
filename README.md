@@ -88,7 +88,7 @@ Here is an example on how you could integrate this in your own config:
 ```lua
 vim.keymap.set("n", "<F5>", function()
   local dap = require("dap")
-  if dap.session() == nil and (vim.bo.filetype == "cpp" or vim.bo.filetype == "c")
+  if dap.session() == nil and (vim.bo.filetype == "cpp" or vim.bo.filetype == "c") then
     -- Only call this on C++ and C files
     require("ctest-telescope").pick_test_and_debug()
   else
